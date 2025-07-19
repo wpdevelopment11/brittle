@@ -26,7 +26,7 @@ source .venv/bin/activate
 # Install Playwright and a Chromium browser,
 # which will be used to check URLs.
 pip install playwright
-playwright install chromium
+playwright install --with-deps chromium
 ```
 
 ## Example
@@ -73,6 +73,21 @@ Options:
   -f, --headful         Run browser in foreground
   -v, --verbose         Print HTTP statutes and URLs of completed requests to stderr
   -h, --help            Show this help message and exit
+```
+
+## Docker
+
+Build the image:
+
+```bash
+cd brittle
+docker build -t brittle .
+```
+
+Run container, read the links from `urls.txt` file on the host and check them:
+
+```bash
+docker run --rm -i brittle --workers 5 --timeout 10 < urls.txt
 ```
 
 ## Run tests
