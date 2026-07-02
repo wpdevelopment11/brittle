@@ -1,5 +1,9 @@
 # A python script to find the broken links using a browser
 
+<p align="center">
+    <img src="image.png" alt="diagram that shows how links are checked using Playwright" />
+</p>
+
 Read URLs from a file or stdin, one per line and check them.
 
 Links are checked using a real browser. By default, it runs in the background.
